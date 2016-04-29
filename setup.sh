@@ -1,6 +1,6 @@
 #!/bin/bash
 
-declare -r GITHUB_REPOSITORY="alrra/dotfiles"
+declare -r GITHUB_REPOSITORY="johnlcox/dotfiles"
 
 declare -r DOTFILES_ORIGIN="git@github.com:$GITHUB_REPOSITORY.git"
 declare -r DOTFILES_TARBALL_URL="https://github.com/$GITHUB_REPOSITORY/tarball/master"
@@ -273,11 +273,6 @@ main() {
 
         ./os/install_applications.sh
         print_in_green "\n  ---\n\n"
-
-        ./os/install_node_versions.sh
-        print_in_green "\n  ---\n\n"
-
-        ./os/install_npm_packages.sh
 
     fi
 

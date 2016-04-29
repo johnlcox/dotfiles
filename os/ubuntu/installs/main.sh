@@ -64,29 +64,7 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    install_package "Chromium" "chromium-browser"
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
     install_package "cURL" "curl"
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    install_package "Dropbox" "nautilus-dropbox"
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    if ! package_is_installed "firefox-trunk"; then
-
-        add_ppa "ubuntu-mozilla-daily/ppa" \
-            || print_error "Firefox Nightly (add PPA)"
-
-        update &> /dev/null \
-            || print_error "Firefox Nightly (resync package index files)" \
-
-    fi
-
-    install_package "Firefox Nightly" "firefox-trunk"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -102,79 +80,11 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    install_package "GNOME Vim" "vim-gnome"
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    install_package "ImageMagick" "imagemagick"
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    if ! package_is_installed "opera"; then
-
-        add_key "https://deb.opera.com/archive.key" \
-            || print_error "Opera (add key)"
-
-        add_to_source_list "https://deb.opera.com/opera-stable/ stable non-free" "opera.list" \
-            || print_error "Opera (add to package resource list)"
-
-        update &> /dev/null \
-            || print_error "Opera (resync package index files)" \
-
-    fi
-
-    # Opera stable based on Blink is only
-    # available for the 64-bit version of Ubuntu
-
-    if [ "$OS_ARCH" == "64" ]; then
-
-        # Automatically answer `Yes` to the `package configuration` prompt
-        # https://github.com/alrra/dotfiles/issues/17
-
-        printf "opera-stable opera-stable/add-deb-source boolean true\n" \
-            | sudo debconf-set-selections
-
-        install_package "Opera" "opera-stable"
-
-    elif [ "$OS_ARCH" == "32" ]; then
-
-        install_package "Opera" "opera"
-
-    fi
-
-    printf "opera-beta opera-beta/add-deb-source boolean true\n" \
-        | sudo debconf-set-selections
-
-    install_package "Opera Beta" "opera-beta"
-
-    printf "opera-developer opera-developer/add-deb-source boolean true\n" \
-        | sudo debconf-set-selections
-
-    install_package "Opera Developer" "opera-developer"
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
     install_package "tmux" "tmux"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    install_package "Transmission" "transmission"
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    install_package "VirtualBox" "virtualbox"
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    install_package "VLC" "vlc"
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
     install_package "xclip" "xclip"
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    install_package "Zopfli" "zopfli"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
