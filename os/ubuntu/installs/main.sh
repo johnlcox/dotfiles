@@ -47,7 +47,7 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    if ! package_is_installed "google-chrome-unstable"; then
+    if ! package_is_installed "google-chrome"; then
 
         add_key "https://dl-ssl.google.com/linux/linux_signing_key.pub" \
             || print_error "Chrome Canary (add key)"
@@ -60,7 +60,7 @@ main() {
 
     fi
 
-    install_package "Chrome Canary" "google-chrome-unstable"
+    install_package "Chrome Canary" "google-chrome"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

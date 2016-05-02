@@ -14,12 +14,9 @@ declare -a FILES_TO_SYMLINK=(
     "shell/bash_profile"
     "shell/bash_prompt"
     "shell/bashrc"
-    "shell/curlrc"
-    "shell/inputrc"
     "shell/screenrc"
     "shell/tmux.conf"
 
-    "git/gitattributes"
     "git/gitconfig"
     "git/gitignore"
 

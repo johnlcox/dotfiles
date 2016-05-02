@@ -46,9 +46,15 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin
 
+source ~/.bash_aliases
+
 # Java
 
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
 export MAVEN_OPTS="-Xss256m -Xmx2048m -XX:MaxPermSize=512m -XX:-UseConcMarkSweepGC"
+
+# ruby
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
