@@ -22,9 +22,9 @@ main() {
 
     # Install / Update vim plugins
 
-    rm -rf "$SOLARIZED_GNOME_TEMP_DIR" &> /dev/null \
-        && git clone "$VUNDLE_GIT_REPO_URL" "$SOLARIZED_GNOME_TEMP_DIR" &> /dev/null \
-        && printf "\n" 2> /dev/null \
+    rm -rf "$SOLARIZED_GNOME_TEMP_DIR" \
+        && git clone "$SOLARIZED_GNOME_GIT_REPO_URL" "$SOLARIZED_GNOME_TEMP_DIR" \
+        && printf "\n" \
         && "$SOLARIZED_GNOME_TEMP_DIR"/install.sh
         #     └─ simulate the ENTER keypress for
         #        the case where there are warnings
