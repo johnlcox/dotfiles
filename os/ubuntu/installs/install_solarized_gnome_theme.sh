@@ -1,9 +1,6 @@
 #!/bin/bash
 
-cd "$(dirname "$BASH_SOURCE")" \
-    && source "utils.sh"
 
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 main() {
     local -r SOLARIZED_GNOME_GIT_REPO_URL="https://github.com/johnlcox/gnome-terminal-colors-solarized.git"
@@ -22,10 +19,11 @@ main() {
 
     # Install / Update vim plugins
 
-    rm -rf "$SOLARIZED_GNOME_TEMP_DIR" \
-        && git clone "$SOLARIZED_GNOME_GIT_REPO_URL" "$SOLARIZED_GNOME_TEMP_DIR" \
-        && printf "\n" \
-        && "$SOLARIZED_GNOME_TEMP_DIR"/install.sh
+    rm -rf "$SOLARIZED_GNOME_TEMP_DIR" &> /dev/null \
+        && git clone "$SOLARIZED_GNOME_GIT_REPO_URL" "$SOLARIZED_GNOME_TEMP_DIR" &> /dev/null \
+        && printf "\n" 2> /dev/null \
+        && "$SOLARIZED_GNOME_TEMP_DIR"/install.sh 2> /dev/null \
+        && rm -rf "$SOLARIZED_GNOME_TEMP_DIR" &> /dev/null
         #     └─ simulate the ENTER keypress for
         #        the case where there are warnings
     print_result $? "Install Solarized Gnome Terminal theme"
