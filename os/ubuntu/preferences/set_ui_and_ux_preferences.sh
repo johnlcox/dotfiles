@@ -21,10 +21,10 @@ set_preferences() {
                 && gsettings set com.canonical.indicator.datetime time-format 'custom'" \
         "Use custom date format in the menu bar"
 
-    execute "gsettings set org.gnome.desktop.background picture-options 'stretched'" \
-        "Set desktop background image options"
+    # execute "gsettings set org.gnome.desktop.background picture-options 'stretched'" \
+    #     "Set desktop background image options"
 
-    execute "gsettings set org.gnome.libgnomekbd.keyboard layouts \"[ 'us', 'ro' ]\"" \
+    execute "gsettings set org.gnome.libgnomekbd.keyboard layouts \"[ 'us' ]\"" \
         "Set keyboard languages"
 
     execute "gsettings set com.canonical.Unity.Launcher favorites \"[
