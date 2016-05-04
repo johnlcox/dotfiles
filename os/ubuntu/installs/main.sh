@@ -60,7 +60,7 @@ main() {
 
     fi
 
-    install_package "Chrome Canary" "google-chrome"
+    install_package "Chrome Canary" "google-chrome-stable"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -85,6 +85,14 @@ main() {
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     install_package "xclip" "xclip"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    install_package "dconf-cli" "dconf-cli"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    ./install_solarized_gnome_theme.sh
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
