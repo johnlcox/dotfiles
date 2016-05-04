@@ -15,8 +15,8 @@ understand [what it does](setup.sh). Seriously, **DON'T**!)
 
 | OS | Snippet |
 |:---:|:---|
-| OS X | `bash -c "$(curl -LsS https://raw.github.com/alrra/dotfiles/master/setup.sh)"` |
-| Ubuntu | `bash -c "$(wget -qO - https://raw.github.com/alrra/dotfiles/master/setup.sh)"` |
+| OS X | `bash -c "$(curl -LsS https://raw.github.com/johnlcox/dotfiles/develop/setup.sh)"` |
+| Ubuntu | `bash -c "$(wget -qO - https://raw.github.com/johnlcox/dotfiles/develop/setup.sh)"` |
 
 That's it! :sparkles:
 
