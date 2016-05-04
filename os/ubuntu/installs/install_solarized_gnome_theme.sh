@@ -23,7 +23,7 @@ main() {
     rm -rf "$SOLARIZED_GNOME_TEMP_DIR" &> /dev/null \
         && git clone "$VUNDLE_GIT_REPO_URL" "$SOLARIZED_GNOME_TEMP_DIR" &> /dev/null \
         && printf "\n" 2> /dev/null \
-        && "$SOLARIZED_GNOME_TEMP_DIR"/set_dark.sh
+        && "$SOLARIZED_GNOME_TEMP_DIR"/install.sh
         #     └─ simulate the ENTER keypress for
         #        the case where there are warnings
     print_result $? "Install Solarized Gnome Terminal theme"
