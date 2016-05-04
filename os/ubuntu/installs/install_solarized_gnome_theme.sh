@@ -1,5 +1,10 @@
 #!/bin/bash
 
+cd "$(dirname "$BASH_SOURCE")" \
+    && source "utils.sh"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 main() {
     local -r SOLARIZED_GNOME_GIT_REPO_URL="https://github.com/johnlcox/gnome-terminal-colors-solarized.git"
     local -r SOLARIZED_GNOME_TEMP_DIR="gnome-terminal-colors-solarized"
