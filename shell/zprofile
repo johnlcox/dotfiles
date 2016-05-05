@@ -7,14 +7,16 @@ source_zsh_files() {
     local file=""
     local i=""
 
-    declare -r -a FILES_TO_SOURCE=(
+    declare -a FILES_TO_SOURCE
+    FILES_TO_SOURCE=(
         "zsh.local"  # for local settings that should
                       # not be under version control
     )
+    declare -r FILES_TO_SOURCE
 
-    for i in ${!FILES_TO_SOURCE[*]}; do
+    for i in $FILES_TO_SOURCE; do
 
-        file="$HOME/.${FILES_TO_SOURCE[$i]}"
+        file="$HOME/.$i"
 
         [ -r "$file" ] \
             && source "$file"
