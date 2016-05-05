@@ -21,11 +21,11 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    # brew_install "Bash" "bash"
-    # brew_install "Bash Completion 2" "bash-completion2" "homebrew/versions"
-    # ./change_default_bash_version.sh
-    #
-    # print_in_green "\n  ---\n\n"
+    brew_install "Bash" "bash"
+    brew_install "Bash Completion 2" "bash-completion2" "homebrew/versions"
+    ./change_default_bash_version.sh
+
+    print_in_green "\n  ---\n\n"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -33,7 +33,7 @@ main() {
     brew_install "Chrome" "google-chrome" "caskroom/cask" "cask"
     brew_install "Firefox" "firefox" "caskroom/cask" "cask"
     brew_install "Flash" "flash" "caskroom/cask" "cask"
-    brew_install "GIMP" "lisanet-gimp" "caskroom/cask" "cask"
+    #brew_install "GIMP" "lisanet-gimp" "caskroom/cask" "cask"
     brew_install "Git" "git"
     brew_install "tmux" "tmux"
     brew_install "Vim" "vim --override-system-vi"
