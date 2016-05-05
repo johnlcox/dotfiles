@@ -17,6 +17,9 @@ declare -a FILES_TO_SYMLINK=(
     "shell/screenrc"
     "shell/tmux.conf"
 
+    "shell/zprofile"
+    "shell/zshrc"
+
     "git/gitconfig"
     "git/gitignore"
 
