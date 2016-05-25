@@ -34,17 +34,17 @@ main() {
     # In the case of fresh installs, in order for `npm` to be
     # available, the `~/bash.local` file needs to be sourced
 
-    if ! cmd_exists "npm"; then
-        source "$HOME/.bash.local"
-    fi
+    # if ! cmd_exists "npm"; then
+    #     source "$HOME/.bash.local"
+    # fi
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     # Additional installs
 
-    cd ~/.vim/plugins/tern_for_vim \
-        && npm install &> /dev/null
-    print_result $? "Install extra parts for \`tern_for_vim\`"
+    # cd ~/.vim/plugins/tern_for_vim \
+    #     && npm install &> /dev/null
+    # print_result $? "Install extra parts for \`tern_for_vim\`"
 
 }
 
