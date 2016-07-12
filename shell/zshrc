@@ -56,3 +56,8 @@ export MAVEN_OPTS="-Xss256m -Xmx2048m -XX:MaxPermSize=512m -XX:-UseConcMarkSweep
 # ruby
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+# node.js
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
