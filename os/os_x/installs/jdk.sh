@@ -25,7 +25,7 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    # Add Install Java versions to jenv
+    # Add Installed Java versions to jenv
 
     jenv add /Library/Java/JavaVirtualMachines/*/Contents/Home
 

@@ -9,6 +9,7 @@ cd "$(dirname "$BASH_SOURCE")" \
 main() {
 
     declare OS_ARCH="$(get_os_arch)"
+    declare -r OHMYZSH_DIRECTORY="$HOME/.oh-my-zsh"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -93,6 +94,18 @@ main() {
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     install_package "dconf-cli" "dconf-cli"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    install_package "Zsh" "zsh"
+
+    if [ ! -d "$OHMYZSH_DIRECTORY" ]; then
+
+        curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+
+    fi
+
+    chsh -s `which zsh`
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

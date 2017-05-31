@@ -38,7 +38,13 @@ main() {
 
     install_package "Oracle JDK8" "oracle-java8-installer"
 
-    # TODO: Add to jenv
+    ## - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Add Installed Java versions to jenv
+
+    jenv add /usr/lib/jvm/*
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 }
 

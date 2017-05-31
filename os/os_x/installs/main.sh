@@ -7,6 +7,7 @@ cd "$(dirname "$BASH_SOURCE")" \
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 main() {
+    declare -r OHMYZSH_DIRECTORY="$HOME/.oh-my-zsh"
 
     ./install_xcode.sh
 
@@ -43,7 +44,12 @@ main() {
     brew_install "Zsh" "zsh"
     brew_install "Zsh Completions" "zsh-completions"
 
-    curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+    if [ ! -d "$OHMYZSH_DIRECTORY" ]; then
+
+        curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+
+    fi
+
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
