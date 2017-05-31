@@ -143,13 +143,14 @@ main() {
     # Add Maven
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
     # Add Gnome terminal active tab highlighting
 
-    cat << EOF > ~/.config/gtk-3.0/gtk.css
-    TerminalWindow .notebook tab:active {
-        background-color: #b0c0f0;
-    }
-    EOF
+cat << EOF > ~/.config/gtk-3.0/gtk.css
+TerminalWindow .notebook tab:active {
+    background-color: #b0c0f0;
+}
+EOF
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
