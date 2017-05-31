@@ -37,6 +37,10 @@ main() {
     brew_install "Git" "git"
     brew_install "tmux" "tmux"
     brew_install "Vim" "vim --override-system-vi"
+    brew_install "Zsh" "zsh"
+    brew_install "Zsh Completions" "zsh-completions"
+
+    curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
