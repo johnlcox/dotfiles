@@ -46,7 +46,7 @@ main() {
     printf "\n"
 
     if answer_is_yes; then
-        ./../install_jenv.sh
+        ./../../install_jenv.sh
     fi
 
     ./jdk.sh
