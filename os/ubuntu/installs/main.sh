@@ -47,6 +47,33 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    if ! package_is_installed "oracle-java9-installer"; then
+      add_ppa "webupd8team/java" \
+          || print_error "Oracle Java (add PPA)"
+
+      update &> /dev/null \
+          || print_error "Oracle Java (resync package index files)"
+    fi
+
+    install_package "Oracle JDK9" "oracle-java9-installer"
+    install_package "oracle-java9-set-default"
+
+    if ! package_is_installed "oracle-java9-installer"; then
+      add_ppa "webupd8team/java" \
+          || print_error "Oracle Java (add PPA)"
+
+      update &> /dev/null \
+          || print_error "Oracle Java (resync package index files)"
+    fi
+
+    install_package "Oracle JDK8" "oracle-java8-installer"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
     if ! package_is_installed "google-chrome"; then
 
         add_key "https://dl-ssl.google.com/linux/linux_signing_key.pub" \

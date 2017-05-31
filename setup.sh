@@ -324,6 +324,18 @@ main() {
 
     fi
 
+    if cmd_exists "java"; then
+        print_info "Install/Update jenv"
+
+        ask_for_confirmation "Do you want to install/update the jenv?"
+        printf "\n"
+
+        if answer_is_yes; then
+            ./os/install_jenv.sh
+        fi
+
+    fi
+
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     print_info "Restart"
