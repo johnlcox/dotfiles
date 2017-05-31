@@ -140,7 +140,7 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    # TODO: Maven
+    # Add Maven
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     # Add Gnome terminal active tab highlighting
