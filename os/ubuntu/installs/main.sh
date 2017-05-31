@@ -124,6 +124,18 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    if ! package_is_installed "gradle"; then
+      add_ppa "cwchien/gradle" \
+          || print_error "Gradle (add PPA)"
+
+      update &> /dev/null \
+          || print_error "Gradle (resync package index files)"
+    fi
+
+    install_package "Gradle" "gradle"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
     ./install_solarized_gnome_theme.sh
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
