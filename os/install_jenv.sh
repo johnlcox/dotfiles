@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 
 cd "$(dirname "$BASH_SOURCE")" \
     && source "utils.sh"
@@ -63,7 +63,7 @@ eval "$(jenv init -)"
 
         # Enable Maven with jenv
 
-        if [ cmd_exists "mvn" ]; then
+        if cmd_exists "mvn"; then
             jenv enable-plugin maven
         fi
 
