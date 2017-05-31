@@ -51,7 +51,7 @@ eval "$(jenv init -)"
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-        # Ensure the latest version of `nvm` is used
+        # Ensure the latest version of `jenv` is used
 
         cd "$JENV_DIRECTORY" \
             && git checkout `git describe --abbrev=0 --tags` &> /dev/null
@@ -61,17 +61,11 @@ eval "$(jenv init -)"
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-        # Install the specified `node` versions
+        # Enable Maven with jenv
 
-        for i in ${NODE_VERSIONS[@]}; do
-            execute "nvm install $i" "nvm (install: $i)"
-        done
-
-        # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-        # By default, use the latest stable version of `node`
-
-        execute "nvm alias default node" "nvm (set default)"
+        if [ cmd_exists "mvn" ]; then
+            jenv enable-plugin maven
+        fi
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

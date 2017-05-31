@@ -38,6 +38,22 @@ main() {
     brew_install "tmux" "tmux"
     brew_install "Vim" "vim --override-system-vi"
 
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    print_info "Install/Update jenv"
+
+    ask_for_confirmation "Do you want to install/update jenv?"
+    printf "\n"
+
+    if answer_is_yes; then
+        ./../install_jenv.sh
+    fi
+
+    ./jdk.sh
+    ./maven.sh
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
     print_in_green "\n  ---\n\n"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

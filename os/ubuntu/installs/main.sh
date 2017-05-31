@@ -47,33 +47,6 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    if ! package_is_installed "oracle-java9-installer"; then
-      add_ppa "webupd8team/java" \
-          || print_error "Oracle Java (add PPA)"
-
-      update &> /dev/null \
-          || print_error "Oracle Java (resync package index files)"
-    fi
-
-    install_package "Oracle JDK9" "oracle-java9-installer"
-    install_package "oracle-java9-set-default"
-
-    if ! package_is_installed "oracle-java9-installer"; then
-      add_ppa "webupd8team/java" \
-          || print_error "Oracle Java (add PPA)"
-
-      update &> /dev/null \
-          || print_error "Oracle Java (resync package index files)"
-    fi
-
-    install_package "Oracle JDK8" "oracle-java8-installer"
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
     if ! package_is_installed "google-chrome"; then
 
         add_key "https://dl-ssl.google.com/linux/linux_signing_key.pub" \
@@ -123,17 +96,35 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    print_info "Install/Update jenv"
+
+    ask_for_confirmation "Do you want to install/update jenv?"
+    printf "\n"
+
+    if answer_is_yes; then
+        ./../install_jenv.sh
+    fi
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    ./jdk.sh
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
     ./install_solarized_gnome_theme.sh
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    # TODO: Maven
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     # Add Gnome terminal active tab highlighting
 
-cat << EOF > ~/.config/gtk-3.0/gtk.css
-TerminalWindow .notebook tab:active {
-    background-color: #b0c0f0;
-}
-EOF
+    cat << EOF > ~/.config/gtk-3.0/gtk.css
+    TerminalWindow .notebook tab:active {
+        background-color: #b0c0f0;
+    }
+    EOF
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
