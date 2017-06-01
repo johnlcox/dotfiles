@@ -48,6 +48,17 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    print_info "Install/Update RVM"
+
+    ask_for_confirmation "Do you want to install/update RVM?"
+    printf "\n"
+
+    if answer_is_yes; then
+        ./../../install_rvm.sh
+    fi
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
     brew_install "Zsh" "zsh"
     brew_install "Zsh Completions" "zsh-completions"
 
