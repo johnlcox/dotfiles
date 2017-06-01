@@ -41,6 +41,8 @@ main() {
     brew_install "Git" "git"
     brew_install "tmux" "tmux"
     brew_install "Vim" "vim --override-system-vi"
+    brew_install "Iterm2" "iterm2" "caskroom/cask" "cask"
+    brew_install "Jetbrains Toolbox" "jetbrains-toolbox" "caskroom/cask" "cask"
     brew_install "Zsh" "zsh"
     brew_install "Zsh Completions" "zsh-completions"
 
@@ -69,8 +71,10 @@ main() {
     ./maven.sh
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    brew install gradle
+    
+    if cmd_exists "jenv"; then
+        brew install gradle
+    fi
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
