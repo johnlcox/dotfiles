@@ -45,6 +45,8 @@ main() {
     brew_install "Jetbrains Toolbox" "jetbrains-toolbox" "caskroom/cask" "cask"
     brew_install "Microsoft Teams" "microsoft-teams" "caskroom/cask" "cask"
     brew_install "Slack" "slack" "caskroom/cask" "cask"
+    brew_install "Docker" "docker" "caskroom/cask" "cask"
+    brew_install "MySql" "mysql"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
