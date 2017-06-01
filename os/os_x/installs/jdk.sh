@@ -17,11 +17,11 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install "Java 6" "java6" "homebrew/versions" "cask"
+    brew_install "Java 6" "java6" "caskroom/versions" "cask"
 
-    brew_install "Oracle Java Latest" "java"
+    brew_install "Oracle Java Latest" "java" "homebrew/versions" "cask"
 
-    brew_install "Java 9 Beta" "java9-beta" "homebrew/versions" "cask"
+    brew_install "Java 9 Beta" "java9-beta" "caskroom/versions" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

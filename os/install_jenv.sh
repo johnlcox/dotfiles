@@ -64,7 +64,7 @@ eval "$(jenv init -)"
         # Enable Maven with jenv
 
         if cmd_exists "mvn"; then
-            jenv enable-plugin maven
+            jenv enable-plugin maven &> /dev/null
         fi
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

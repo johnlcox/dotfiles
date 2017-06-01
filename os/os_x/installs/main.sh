@@ -71,7 +71,7 @@ main() {
     ./maven.sh
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    
+
     if cmd_exists "jenv"; then
         brew install gradle
     fi
