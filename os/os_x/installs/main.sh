@@ -43,6 +43,11 @@ main() {
     brew_install "Vim" "vim --override-system-vi"
     brew_install "Iterm2" "iterm2" "caskroom/cask" "cask"
     brew_install "Jetbrains Toolbox" "jetbrains-toolbox" "caskroom/cask" "cask"
+    brew_install "Microsoft Teams" "microsoft-teams" "caskroom/cask" "cask"
+    brew_install "Slack" "slack" "caskroom/cask" "cask"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
     brew_install "Zsh" "zsh"
     brew_install "Zsh Completions" "zsh-completions"
 
@@ -51,7 +56,6 @@ main() {
         curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 
     fi
-
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -64,7 +68,12 @@ main() {
         ./../../install_jenv.sh
     fi
 
-    ./jdk.sh
+    ask_for_confirmation "Do you want to install/update Java?"
+    printf "\n"
+
+    if answer_is_yes; then
+        ./jdk.sh
+    fi
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -72,7 +81,7 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    if cmd_exists "jenv"; then
+    if cmd_exists "java"; then
         brew install gradle
     fi
 
