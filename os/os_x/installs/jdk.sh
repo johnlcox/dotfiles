@@ -27,7 +27,10 @@ main() {
 
     # Add Installed Java versions to jenv
 
-    jenv add /Library/Java/JavaVirtualMachines/*/Contents/Home
+    for path in /Library/Java/JavaVirtualMachines/*; do
+        [ -d "${path}" ] || continue # if not a directory, skip
+        jenv add /Library/Java/JavaVirtualMachines/$(basename "${path}")/Contents/Home
+    done
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
