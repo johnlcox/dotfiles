@@ -12,6 +12,7 @@ main() {
 
     ./set_language_and_region_preferences.sh
     ./set_photos_preferences.sh
+    ./set_ui_and_ux_preferences.sh
 
     for i in ${PROCESSES_TO_TERMINATE[*]}; do
         killall "$i" &> /dev/null

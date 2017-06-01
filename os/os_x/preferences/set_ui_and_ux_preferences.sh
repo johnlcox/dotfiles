@@ -86,7 +86,7 @@ set_preferences() {
             " \
         "Hide Time Machine and Volume icons from the menu bar"
 
-    execute "defaults write NSGlobalDomain com.apple.swipescrolldirection -bool true" \
+    execute "defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false" \
         "Enable natrual scroll direction"
 
 }
