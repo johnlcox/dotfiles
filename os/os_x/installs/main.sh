@@ -47,6 +47,9 @@ main() {
     brew_install "Slack" "slack" "caskroom/cask" "cask"
     brew_install "Docker" "docker" "caskroom/cask" "cask"
     brew_install "MySql" "mysql"
+    brew_install "Mas" "mas"
+
+    mas_install "Amphetamine" "937984704"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -95,7 +98,7 @@ main() {
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     if cmd_exists "java"; then
-        brew install gradle
+        brew_install "Gradle" "gradle"
     fi
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

@@ -47,3 +47,32 @@ brew_install() {
 brew_tap() {
     brew tap "$1" &> /dev/null
 }
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+mas_install() {
+
+    declare -r CMD="$4"
+    declare -r APP_ID="$2"
+    declare -r APP_READABLE_NAME="$1"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Check if `mas-cli` is installed
+
+    if ! cmd_exists "mas"; then
+        print_error "$APP_READABLE_NAME (\`mas\` is not installed)"
+        return 1
+    fi
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Install the specified app
+
+    if mas "$CMD" list "$APP_ID" &> /dev/null; then
+        print_success "$APP_READABLE_NAME"
+    else
+        execute "mas $CMD install $APP_ID" "$APP_READABLE_NAME"
+    fi
+
+}
