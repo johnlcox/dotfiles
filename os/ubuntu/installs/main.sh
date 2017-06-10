@@ -11,6 +11,23 @@ main() {
     declare OS_ARCH="$(get_os_arch)"
     declare -r OHMYZSH_DIRECTORY="$HOME/.oh-my-zsh"
 
+    declare -r GPG_AGENT_INITIALIZATION='
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Invoke GnuPG-Agent the first time we login.
+# Does `~/.gpg-agent-info` exist and points to gpg-agent process accepting signals?
+if test -f $HOME/.gpg-agent-info && \
+    kill -0 `cut -d: -f 2 $HOME/.gpg-agent-info` 2>/dev/null; then
+    GPG_AGENT_INFO=`cat $HOME/.gpg-agent-info | cut -c 16-`
+else
+    # No, gpg-agent not available; start gpg-agent
+    eval `gpg-agent --daemon --no-grab --write-env-file $HOME/.gpg-agent-info`
+fi
+export GPG_TTY=`tty`
+export GPG_AGENT_INFO
+
+'
+
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     update
@@ -106,6 +123,20 @@ main() {
     fi
 
     chsh -s `which zsh`
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    install_package "GPG Agent" "gnupg-agent"
+
+    if ! package_is_installed; then
+
+        if [ $? -eq 0 ]; then
+            printf "%s" "$GPG_AGENT_INITIALIZATION" >> "$HOME/.zsh.local" \
+                && source "$HOME/.zsh.local"
+            print_result $? "gpg-agent (update ~/.zsh.local)"
+        fi
+
+    fi
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

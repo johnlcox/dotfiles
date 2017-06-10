@@ -14,7 +14,7 @@ source_zsh_files() {
     )
     declare -r FILES_TO_SOURCE
 
-    for i in $FILES_TO_SOURCE; do
+    for i in ${FILES_TO_SOURCE[@]}; do
 
         file="$HOME/.$i"
 
